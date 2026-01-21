@@ -3,91 +3,391 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoHost Orbit</title>
+  <title>Orbit Co-Host</title>
 
-  <!-- Inter Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25694.png" type="image/png">
+  <!-- Fonts -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <div class="logo">CoHost Orbit</div>
+<header class="site-header" id="navbar">
+  <div class="logo">
+  <span class="logo-orbit">ORBIT</span>
+  <span class="logo-cohost">co-host</span>
+</div>
+
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#meeting">Book a Meeting</a>
-    <a href="#contact">Contact</a>
+    <a href="#meeting" class="btn">Book a Meeting</a>
+    <a href="#contact">Contact Us</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero">
+  <div class="overlay"></div>
   <div class="hero-content">
-    <h1>Effortless Co-Hosting for Your Airbnb</h1>
-    <p>Let us handle every detail of your short-term rental while you sit back and watch your profits grow.</p>
-    <a href="#meeting" class="cta-btn">Book a Free Consultation</a>
+    <h1>Elevate Your <span>Hosting Experience</span></h1>
+    <p>Premium, full-service Airbnb management designed to maximize revenue and guest satisfaction.</p>
+    <div class="hero-actions">
+      <a href="#meeting" class="primary">Book a Consultation</a>
+      <a href="#services" class="secondary">Explore Services</a>
+    </div>
   </div>
 </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>At CoHost Orbit, we specialize in managing Airbnb and short-term rentals end-to-end. From guest communication to property care — we help you earn more while doing less.</p>
+<!-- WHY -->
+<section class="why">
+  <h2>Hosting, Perfected.</h2>
+  <div class="cards">
+    <div class="card card-dark">
+      <h3>Maximize Revenue</h3>
+      <p>Dynamic pricing and listing optimization for higher occupancy and nightly rates.</p>
+    </div>
+    <div class="card card-dark">
+      <h3>Complete Peace of Mind</h3>
+      <p>From guest screening to cleaning, we handle every detail.</p>
+    </div>
+    <div class="card card-dark">
+      <h3>5-Star Experience</h3>
+      <p>24/7 guest support ensuring consistently excellent reviews.</p>
+    </div>
+  </div>
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service">
+
+
+<!-- ABOUT CONTENT -->
+<section class="about-content" id="about">
+  <div class="about-text">
+    <h2>More Than Just Property Management</h2>
+
+    <p>
+      Founded on the belief that hosting should be an art form, Orbit Co-Host
+      bridges the gap between property ownership and hospitality excellence.
+    </p>
+
+    <p>
+      We noticed a gap in the market: property managers were either too large and
+      impersonal, or too small and inexperienced. Orbit was born to provide the
+      systems of a large corporation with the white-glove touch of a boutique firm.
+    </p>
+
+    <p>
+      Our mission is simple: to empower property owners to build wealth through
+      real estate without the headaches of day-to-day operations.
+    </p>
+  </div>
+
+  <div class="about-images">
+  <!-- Home / Exterior -->
+  <img 
+    src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop"
+    alt="Luxury home exterior"
+  />
+
+  <!-- Bedroom -->
+  <img 
+    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+    alt="Modern bedroom interior"
+  />
+</div>
+
+</section>
+
+<section class="services" id="services">
+  <h2 class="services-title">Services</h2>
+
+
+  <div class="services-grid">
+
+    <!-- Card 1 -->
+    <div class="service-card">
+      <div class="icon-box">
+        <!-- Chat Icon -->
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        </svg>
+      </div>
       <h3>Guest Communication</h3>
-      <p>24/7 guest messaging and check-in coordination.</p>
+      <p>
+        24/7 guest messaging and check-in coordination. We respond within minutes,
+        ensuring guests feel supported at all times.
+      </p>
     </div>
-    <div class="service">
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <div class="icon-box">
+        <!-- Trending Icon -->
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M3 17l6-6 4 4 8-8"/>
+          <path d="M14 7h7v7"/>
+        </svg>
+      </div>
       <h3>Listing Optimization</h3>
-      <p>We create professional listings that attract more bookings.</p>
+      <p>
+        SEO-optimized listings, pricing strategies, and photography coordination
+        designed to increase bookings.
+      </p>
     </div>
-    <div class="service">
+
+    <!-- Card 3 -->
+    <div class="service-card">
+      <div class="icon-box">
+        <!-- Sparkle Icon -->
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+        </svg>
+      </div>
       <h3>Cleaning & Maintenance</h3>
-      <p>Trusted cleaning teams ensure your property always shines.</p>
+      <p>
+        Trusted cleaning teams and proactive maintenance ensure your property
+        always meets premium standards.
+      </p>
     </div>
-    <div class="service">
+
+    <!-- Card 4 -->
+    <div class="service-card">
+      <div class="icon-box">
+        <!-- Star Icon -->
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
+        </svg>
+      </div>
       <h3>Review Management</h3>
-      <p>We help maintain your 5-star reputation and guest satisfaction.</p>
+      <p>
+        Strategic review generation and professional responses to protect
+        your 5-star reputation.
+      </p>
     </div>
-    <div class="service">
+
+    <!-- Card 5 -->
+    <div class="service-card">
+      <div class="icon-box">
+        <!-- Shield Icon -->
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
+        </svg>
+      </div>
       <h3>Damage Claim Support</h3>
-      <p>We handle Airbnb damage claims with efficiency and care.</p>
+      <p>
+        We handle Airbnb damage claims and AirCover resolutions efficiently,
+        protecting your investment.
+      </p>
     </div>
+
+    <!-- CTA Card -->
+    <div class="service-card service-cta">
+      <p>We tailor packages for unique properties.</p>
+      <a href="#contact" class="cta-btn">Contact Us</a>
+    </div>
+
   </div>
 </section>
 
-<section id="meeting">
-  <h2>Book a Meeting</h2>
-  <p>Schedule a free co-hosting consultation:</p>
 
-  <div class="meeting-container">
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/sabdullahzaidi5/haven-host-co"
-         style="min-width:320px;height:700px;">
-    </div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- FEATURE -->
+<section class="feature">
+  <div class="feature-image">
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200" alt="Bedroom">
+  </div>
+  <div class="feature-text">
+    <h2>From booking to checkout — we manage it all</h2>
+    <p>
+      Orbit delivers a seamless, high-touch experience. We turn your property into a high-performing asset
+      while you enjoy passive income with zero stress.
+    </p>
+    <a href="#services">View All Services →</a>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:sabdullahzaidi5@gmail.com">sabdullahzaidi5@gmail.com</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/cohostwithabdullah/" target="_blank">@cohostwithabdullah</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/syed-abdullah-hassan-zaidi/" target="_blank">Syed Abdullah Co-Host</a></p>
+<!-- CTA -->
+<section id="meeting" class="cta">
+  
+  <h2 class="services-title">Ready to elevate your listing?</h2>
+
+  <!-- Calendly Inline Embed -->
+  <div 
+    class="calendly-inline-widget"
+    data-url="https://calendly.com/sabdullahzaidi5/haven-host-co"
+    style="min-width:320px;height:700px;">
+  </div>
 </section>
 
-<footer>
-  <p>© 2025 CoHost Orbit. All Rights Reserved.</p>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2 class="services-title">Contact Us</h2>
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h2>Email Us</h2>
+
+      <div class="info-item">
+        <div class="icon">✉️</div>
+        <div>
+          <h4>Email Us</h4>
+          <p>sabdullahzaidi5@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">📞</div>
+        <div>
+          <h4>Call Us</h4>
+          <p>+92-310-7111693</p>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=world&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+      <h3>Send us a Message</h3>
+
+      <form id="contactForm"
+        action="https://formspree.io/f/xdaabonb"
+        method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" required placeholder="Your name" />
+
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="Your email address" />
+
+        <label>Message</label>
+        <textarea name="message" required placeholder="How can we help you?"></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div>
+      <h3>ORBIT Co-Host</h3>
+      <p>
+        Premium Airbnb co-hosting services designed to maximize your revenue
+        while minimizing your stress.
+      </p>
+    </div>
+
+    <div>
+      <h4>Navigation</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#meeting">Book a Meeting</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>sabdullahzaidi5@gmail.com</p>
+      <p>+92-370-7116893</p>
+      <p>Pakistan</p>
+    </div>
+
+   <div>
+  <h4>Follow Us</h4>
+  <div class="socials">
+    <a href="https://www.facebook.com/syed.abdullah.hassan.zaidi" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/cohostwithabdullah/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/syed-abdullah-hassan-zaidi/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Orbit Co-Host. All rights reserved.</p>
+  </div>
 </footer>
+
+
 
 </body>
 </html>
 
+<script 
+  src="https://assets.calendly.com/assets/external/widget.js"
+  async>
+</script>
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = "Message sent successfully! We'll get back to you soon.";
+        status.style.color = "green";
+        form.reset();
+      } else {
+        status.textContent = "Something went wrong. Please try again.";
+        status.style.color = "red";
+      }
+    } catch (error) {
+      status.textContent = "Network error. Please try again later.";
+      status.style.color = "red";
+    }
+  });
+</script>
+
+<script>
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
 
