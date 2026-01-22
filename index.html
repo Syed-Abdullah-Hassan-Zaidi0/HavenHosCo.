@@ -311,9 +311,36 @@
      target="_blank">
     Schedule Free Audit
   </a>
+<!-- Chatbot Button -->
+<div class="chatbot-toggle" onclick="toggleChat()">💬</div>
+
+<!-- Chatbot Window -->
+<div class="chatbot" id="chatbot">
+  <div class="chatbot-header">
+    Orbit Assistant
+    <span onclick="toggleChat()">✕</span>
+  </div>
+
+  <div class="chatbot-body" id="chatBody">
+    <div class="bot-message">
+      Hi! 👋 I can explain Airbnb co-hosting and how Orbit Co-Host manages your listing.
+      What would you like to know?
+    </div>
+  </div>
+
+  <div class="chatbot-options">
+    <button onclick="sendBot('What is Airbnb co-hosting?')">
+      What is Airbnb co-hosting?
+    </button>
+    <button onclick="sendBot('How do you manage my listing?')">
+      How do you manage my listing?
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
+
 
 
 
