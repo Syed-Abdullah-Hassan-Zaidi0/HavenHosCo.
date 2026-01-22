@@ -881,6 +881,35 @@ html, body {
   background: #e2e8f0;
 }
 
+.socials {
+  display: flex;                 /* horizontal */
+  align-items: center;
+  gap: 14px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;       /* transparent by default */
+  border: 1px solid rgba(255,255,255,0.15);
+
+  color: #ffffff;
+  font-size: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: #e7c18a;           /* gold on hover */
+  border-color: #e7c18a;
+  color: #1b2434;
+  transform: translateY(-3px);
+}
 
 /* Mobile center */
 @media (max-width: 768px) {
@@ -888,6 +917,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
