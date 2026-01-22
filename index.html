@@ -218,7 +218,58 @@
 <section class="contact-section" id="contact">
   <h2 class="services-title">Contact Us</h2>
   <div class="contact-container">
-    <!-- content unchanged -->
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h2>Email Us</h2>
+
+      <div class="info-item">
+        <div class="icon">✉️</div>
+        <div>
+          <h4>Email Us</h4>
+          <p>sabdullahzaidi5@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">📞</div>
+        <div>
+          <h4>Call Us</h4>
+          <p>+92-310-7111693</p>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=world&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+      <h3>Send us a Message</h3>
+
+      <form id="contactForm"
+        action="https://formspree.io/f/xdaabonb"
+        method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" required placeholder="Your name" />
+
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="Your email address" />
+
+        <label>Message</label>
+        <textarea name="message" required placeholder="How can we help you?"></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+
   </div>
 </section>
 
@@ -255,4 +306,5 @@
 
 </body>
 </html>
+
 
