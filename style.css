@@ -610,3 +610,135 @@ nav a {
   background: rgba(15, 26, 43, 0.92);
   backdrop-filter: blur(10px);
 }
+
+/* ===============================
+   MOBILE NAVIGATION
+================================ */
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile nav behavior */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0f1a2b;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    margin: 14px 0;
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   HERO – MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-actions a {
+    margin: 0;
+  }
+}
+
+/* ===============================
+   GRID STACKING
+================================ */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 80px 30px;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+    padding: 80px 30px;
+  }
+
+  .feature-text h2 {
+    font-size: 28px;
+  }
+}
+
+/* ===============================
+   FOOTER MOBILE
+================================ */
+@media (max-width: 900px) {
+  .footer {
+    padding: 80px 30px 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===============================
+   GENERAL MOBILE SPACING
+================================ */
+@media (max-width: 600px) {
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .services-title {
+    font-size: 30px;
+  }
+
+  .cta h2 {
+    font-size: 32px;
+  }
+}
+
+/* ===============================
+   PREVENT HORIZONTAL SCROLL
+================================ */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
