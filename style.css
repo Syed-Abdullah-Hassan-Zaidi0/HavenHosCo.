@@ -742,3 +742,34 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* MOBILE STICKY CTA */
+.mobile-cta {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+
+    background: #e7c18a;
+    color: #1b2434;
+    padding: 14px 26px;
+    border-radius: 999px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+}
+
+
