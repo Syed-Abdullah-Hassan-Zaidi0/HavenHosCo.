@@ -368,87 +368,118 @@ const chatMessages = document.getElementById("chatMessages");
 chatToggle.onclick = () => chatbot.style.display = "flex";
 chatClose.onclick = () => chatbot.style.display = "none";
 
+/* Add message to chat */
 function addMessage(text, className) {
-  chatMessages.innerHTML += `<div class="${className}">${text}</div>`;
+  const div = document.createElement("div");
+  div.className = className;
+  div.innerHTML = text;
+  chatMessages.appendChild(div);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-async function sendToAI(message) {
-  const res = await fetch("/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message }),
-  });
+/* Smart chatbot brain */
+function getSmartReply(message) {
+  const text = message.toLowerCase();
 
-  return res.json();
+  if (text.includes("hello") || text.includes("hi")) {
+    return "Hi 👋 Happy to help. Are you currently hosting on Airbnb or just exploring?";
+  }
+
+  if (text.includes("what") && text.includes("co-host")) {
+    return "Airbnb co-hosting means we professionally manage your short-term rental while you stay in full control. We handle guests, pricing, cleaning, reviews, and optimization so hosting becomes passive for you.";
+  }
+
+  if (text.includes("how") && (text.includes("work") || text.includes("manage"))) {
+    return "We take care of everything end-to-end — listing optimization, dynamic pricing, 24/7 guest communication, cleaning coordination, maintenance, and performance tracking.";
+  }
+
+  if (text.includes("listing")) {
+    return "Once onboarded, we optimize your listing, manage guest communication, coordinate cleaning and maintenance, monitor pricing daily, and protect your 5-star reputation.";
+  }
+
+  if (text.includes("service")) {
+    return "Our services include guest communication, pricing optimization, cleaning coordination, review management, and damage claim support.";
+  }
+
+  if (text.includes("price") || text.includes("cost")) {
+    return "Our pricing is performance-based and customized to each property. The best way to get exact numbers is through a free listing audit.";
+  }
+
+  if (
+    text.includes("book") ||
+    text.includes("meeting") ||
+    text.includes("call") ||
+    text.includes("audit")
+  ) {
+    setTimeout(() => {
+      window.open(
+        "https://calendly.com/sabdullahzaidi5/haven-host-co",
+        "_blank"
+      );
+    }, 1200);
+
+    return "Great choice 👍 I’m opening our free audit calendar for you now.";
+  }
+
+  if (
+    text.includes("contact") ||
+    text.includes("email") ||
+    text.includes("message")
+  ) {
+    setTimeout(() => {
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: "smooth"
+      });
+      chatbot.style.display = "none";
+    }, 1200);
+
+    return "Sure — I’ll take you to our contact section.";
+  }
+
+  return "That’s a great question. Orbit Co-Host helps property owners earn more from Airbnb while we handle every operational detail. Would you like to book a free audit or learn more about our services?";
 }
 
-chatSend.onclick = async () => {
+/* Send message */
+chatSend.onclick = () => {
   const message = chatInput.value.trim();
   if (!message) return;
 
   addMessage(message, "user-message");
   chatInput.value = "";
 
-  addMessage("Typing...", "bot-message");
+  addMessage("Typing…", "bot-message");
 
-  try {
-    const data = await sendToAI(message);
-
-    // Remove "Typing..."
+  setTimeout(() => {
     chatMessages.lastChild.remove();
-
-    addMessage(data.reply, "bot-message");
-
-    // 👉 Intent Detection (AI-powered UX)
-    const lower = message.toLowerCase();
-
-    if (
-      lower.includes("book") ||
-      lower.includes("meeting") ||
-      lower.includes("call") ||
-      lower.includes("consult")
-    ) {
-      setTimeout(() => {
-        window.open(
-          "https://calendly.com/sabdullahzaidi5/haven-host-co",
-          "_blank"
-        );
-      }, 1200);
-    }
-
-    if (
-      lower.includes("contact") ||
-      lower.includes("email") ||
-      lower.includes("message")
-    ) {
-      setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({
-          behavior: "smooth"
-        });
-        chatbot.style.display = "none";
-      }, 1200);
-    }
-
-  } catch (error) {
-    chatMessages.lastChild.remove();
-    addMessage(
-      "Sorry, something went wrong. Please try again.",
-      "bot-message"
-    );
-  }
+    const reply = getSmartReply(message);
+    addMessage(reply, "bot-message");
+  }, 700);
 };
 
-// Send on Enter key
+/* Enter key support */
 chatInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") chatSend.click();
 });
+
+/* Quick question buttons */
+function handleQuick(text) {
+  addMessage(text, "user-message");
+
+  addMessage("Typing…", "bot-message");
+
+  setTimeout(() => {
+    chatMessages.lastChild.remove();
+    const reply = getSmartReply(text);
+    addMessage(reply, "bot-message");
+  }, 700);
+}
 </script>
 
 
 
 </body>
 </html>
+
 
 
 
